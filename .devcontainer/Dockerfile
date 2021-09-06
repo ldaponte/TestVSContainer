@@ -6,6 +6,8 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
 [Optional] Uncomment this section to install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends nodejs
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
+    && nvm install 16.5.0
+    # && apt-get -y install --no-install-recommends nodejs npm
 
 
